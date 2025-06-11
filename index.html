@@ -3,69 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Clone YouTube</title>
+    <title>Clone YouTube - Flexbox</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header class="header">
         <div class="logo-menu">
-            <div class="menu-icon">☰</div>
-            <div class="logo">MeuTube</div>
+            <button class="menu-icon mobile-only" id="mobileMenuButton"><span class="material-icons">menu</span></button>
+            <button class="menu-icon desktop-only"><span class="material-icons">menu</span></button>
+            <div class="logo">
+                <img src="assets/images/youtube.svg" alt="YouTube Logo" class="logo-icon">
+            </div>
         </div>
-        <div class="search-bar">
+        
+        <div class="search-bar desktop-only">
             <input type="text" placeholder="Pesquisar">
-            <button>🔍</button>
+            <button class="search-button"><span class="material-icons">search</span></button>
         </div>
+        
         <div class="user-actions">
-            <button>📹</button>
-            <button>🔔</button>
-            <button class="user-avatar">👤</button>
+            <button class="action-button desktop-only"><span class="material-icons">video_call</span></button>
+            <button class="action-button desktop-only"><span class="material-icons">notifications</span></button>
+            <button class="user-avatar">A</button>
         </div>
     </header>
 
     <div class="container">
-        <nav class="sidebar">
+        <nav class="sidebar" id="sidebar">
             <ul>
-                <li class="active">🏠 Início</li>
-                <li>📺 Explorar</li>
-                <li>🎬 Shorts</li>
-                <li>📌 Inscrições</li>
-                <!-- Outros itens do menu -->
+                <li class="active"><span class="material-icons">home</span> <span class="menu-text">Início</span></li>
+                <li><span class="material-icons">explore</span> <span class="menu-text">Explorar</span></li>
+                <li><span class="material-icons">subscriptions</span> <span class="menu-text">Inscrições</span></li>
+                <li><span class="material-icons">video_library</span> <span class="menu-text">Biblioteca</span></li>
+                <li><span class="material-icons">history</span> <span class="menu-text">Histórico</span></li>
+                <li><span class="material-icons">watch_later</span> <span class="menu-text">Assistir mais tarde</span></li>
+                <li><span class="material-icons">thumb_up</span> <span class="menu-text">Vídeos curtidos</span></li>
             </ul>
         </nav>
 
         <main class="content">
-            <section class="video-player">
-                <!-- Player de vídeo principal -->
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
-                </div>
-                <div class="video-info">
-                    <h1>Título do Vídeo</h1>
-                    <div class="video-actions">
-                        <span>1.2M visualizações</span>
-                        <div class="action-buttons">
-                            <button>👍 Curtir</button>
-                            <button>👎 Não curtir</button>
-                            <button>↗️ Compartilhar</button>
-                            <button>⏬ Download</button>
+            <section class="main-content">
+                <div class="video-player">
+                    <div class="video-container">
+                        <iframe id="mainVideo" src="https://www.youtube.com/embed/5yb2N3pnztU?si=45Z8UwWMGCTMpL5x" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div class="video-info">
+                        <h1 id="videoTitle">Semana Front-end | Dia 01: Construindo uma Landing Page no Mundo Invertido com HTML e CSS</h1>
+                        
+                        <div class="video-actions">
+                            <span class="views">28.418 visualizações • Transmitido ao vivo em 23 ago. de 2022</span>
+                            
+                            <div class="action-buttons">
+                                <button class="like-button">
+                                    <span class="material-icons">thumb_up</span>
+                                    <span>2 mil</span>
+                                </button>
+                                <button class="dislike-button">
+                                    <span class="material-icons">thumb_down</span>
+                                    <span>Não gostei</span>
+                                </button>
+                                <button class="share-button">
+                                    <span class="material-icons">share</span>
+                                    <span>Compartilhar</span>
+                                </button>
+                                <button class="download-button">
+                                    <span class="material-icons">download</span>
+                                    <span>Download</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="channel-info">
+                            <div class="channel-avatar">D</div>
+                            <div class="channel-details">
+                                <h3>DigitalInnovationOne</h3>
+                                <p>833 mil inscritos</p>
+                            </div>
+                            <button class="subscribe-btn">INSCREVA-SE</button>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="video-suggestions">
-                <div class="video-card">
-                    <img src="thumb1.jpg" alt="Thumbnail">
+            <aside class="recommendations">
+                <div class="recommended-video" data-video-id="p5X8Z-jvsHI?si=1FOpp-Rvo13Yd-B-" data-title="Geração Tech Unimed - BH - Ciência de Dados" data-views="1.2 mil visualizações • há 3 dias">
+                    <img src="https://i.ytimg.com/vi/p5X8Z-jvsHI?si=1FOpp-Rvo13Yd-B-/hqdefault.jpg" alt="Thumbnail" class="video-thumbnail">
                     <div class="video-details">
-                        <h3>Título do Vídeo Sugerido 1</h3>
-                        <p>Canal XYZ</p>
-                        <p>1.2M visualizações • há 3 dias</p>
+                        <h3>Geração Tech Unimed - BH - Ciência de Dados</h3>
+                        <p class="channel-name">DigitalInnovationOne</p>
+                        <p class="video-stats">1.2 mil visualizações • há 3 dias</p>
                     </div>
                 </div>
-                <!-- Mais vídeos sugeridos -->
-            </section>
+                
+                <div class="recommended-video" data-video-id="Pka9k_elCkA?si=95_LFzWS_xip37TA" data-title="Scrum Talks" data-views="1.6 mil visualizações • há 3 dias">
+                    <img src="https://i.ytimg.com/vi/Pka9k_elCkA?si=95_LFzWS_xip37TA.jpg" alt="Thumbnail" class="video-thumbnail">
+                    <div class="video-details">
+                        <h3>Scrum Talks</h3>
+                        <p class="channel-name">DigitalInnovationOne</p>
+                        <p class="video-stats">1.6 mil visualizações • há 3 dias</p>
+                    </div>
+                </div>
+                
+                <div class="recommended-video" data-video-id="GHpJ0STOfWc?si=BAM83g7hbLKh15Dp" data-title="Machine Learning Avançado - Fast Track" data-views="1.7 mil visualizações • há 4 dias">
+                    <img src="https://i.ytimg.com/vi/VIDEO3/hqdefault.jpg" alt="Thumbnail" class="video-thumbnail">
+                    <div class="video-details">
+                        <h3>Machine Learning Avançado - Fast Track</h3>
+                        <p class="channel-name">DigitalInnovationOne</p>
+                        <p class="video-stats">1.7 mil visualizações • há 4 dias</p>
+                    </div>
+                </div>
+                
+                <div class="recommended-video" data-video-id="dFlDRhvM4L0?si=XC3IOqJB96e89B76" data-title="Global Skills #2 - Project Planning" data-views="971 visualizações • há 5 dias">
+                    <img src="https://i.ytimg.com/vi/VIDEO4/hqdefault.jpg" alt="Thumbnail" class="video-thumbnail">
+                    <div class="video-details">
+                        <h3>Global Skills #2 - Project Planning</h3>
+                        <p class="channel-name">DigitalInnovationOne</p>
+                        <p class="video-stats">971 visualizações • há 5 dias</p>
+                    </div>
+                </div>
+                
+                <div class="recommended-video" data-video-id="h7MYJghRWt0?si=BHMXhmSVyQXfuznE" data-title="Como aprender a programar Python do ZERO" data-views="711 visualizações • há 6 dias">
+                    <img src="https://i.ytimg.com/vi/VIDEO5/hqdefault.jpg" alt="Thumbnail" class="video-thumbnail">
+                    <div class="video-details">
+                        <h3>Como aprender a programar Python do ZERO</h3>
+                        <p class="channel-name">DigitalInnovationOne</p>
+                        <p class="video-stats">711 visualizações • há 6 dias</p>
+                    </div>
+                </div>
+            </aside>
         </main>
     </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
