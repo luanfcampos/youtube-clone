@@ -1,11 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Meu Clone YouTube</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <header class="header">
+        <div class="logo-menu">
+            <div class="menu-icon">☰</div>
+            <div class="logo">MeuTube</div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar">
+            <button>🔍</button>
+        </div>
+        <div class="user-actions">
+            <button>📹</button>
+            <button>🔔</button>
+            <button class="user-avatar">👤</button>
+        </div>
+    </header>
+
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li class="active">🏠 Início</li>
+                <li>📺 Explorar</li>
+                <li>🎬 Shorts</li>
+                <li>📌 Inscrições</li>
+                <!-- Outros itens do menu -->
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section class="video-player">
+                <!-- Player de vídeo principal -->
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
+                </div>
+                <div class="video-info">
+                    <h1>Título do Vídeo</h1>
+                    <div class="video-actions">
+                        <span>1.2M visualizações</span>
+                        <div class="action-buttons">
+                            <button>👍 Curtir</button>
+                            <button>👎 Não curtir</button>
+                            <button>↗️ Compartilhar</button>
+                            <button>⏬ Download</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="video-suggestions">
+                <div class="video-card">
+                    <img src="thumb1.jpg" alt="Thumbnail">
+                    <div class="video-details">
+                        <h3>Título do Vídeo Sugerido 1</h3>
+                        <p>Canal XYZ</p>
+                        <p>1.2M visualizações • há 3 dias</p>
+                    </div>
+                </div>
+                <!-- Mais vídeos sugeridos -->
+            </section>
+        </main>
+    </div>
 </body>
 </html>
